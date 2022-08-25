@@ -15,7 +15,7 @@ router.route("/").get(getGoals).post(setGoal);
 
 // router.put("/:id", updateGoal);
 // router.delete("/:id", deleteGoal);
-router.route("/:id").delete(updateGoal).put(deleteGoal);
+router.route("/:id").delete(deleteGoal).put(updateGoal);
 
 
 module.exports = router;
