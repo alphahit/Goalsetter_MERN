@@ -8,7 +8,7 @@ const connectDB  = async() => {
         //The cyan is from the colors package
     }
     catch(e) {
-        console.log(e)
+        console.log("Mongo Error",e)
         process.exit(1)
     }
 }

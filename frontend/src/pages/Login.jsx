@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { FaSignInAlt } from "react-icons/fa";
-import { FaUser } from 'react-icons/fa'
+//import { FaUser } from 'react-icons/fa'
 import { useSelector, useDispatch } from 'react-redux'
 //useSelector is used to bring something from the state
 //useDispatch is dispatch a fucntion
@@ -57,14 +57,24 @@ function Login() {
     return <Spinner/>
   }
   return (
-    <>
-      <section className="heading">
+    <div style={{
+      //backgroundImage: "linear-gradient(white,yellow)",
+      //backgroundColor:"lightgrey"
+    }}>
+      <section className="heading" 
+      // style={{
+      //       backgroundImage: "linear-gradient(yellow,white)",
+      //       color: "darkred",
+      //     }}
+          >
         <h1>
           <FaSignInAlt /> Login
         </h1>
         <p>Login and start setting your goals</p>
       </section>
-      <section className="form">
+      <section className="form" style={{
+            backgroundImage: "linear-gradient(white,yellow)",
+          }}>
         <form onSubmit={onSubmit}>
          
           <div className="form-group">
@@ -95,7 +105,7 @@ function Login() {
           </div>
         </form>
       </section>
-    </>
+    </div>
   );
 }
 

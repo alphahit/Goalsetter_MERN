@@ -16,7 +16,10 @@ const onLogout = () =>{
 }
 
   return (
-    <header className='header'>
+    <header className='header' style={{
+        backgroundImage: "linear-gradient(yellow,white)",
+        //color: "darkred",
+      }}>
     
     <div className='logo'>
         <Link to = '/' >GoalSetter</Link>

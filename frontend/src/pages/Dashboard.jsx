@@ -3,7 +3,10 @@ import React from 'react'
 const Dashboard = () =>{
     return (
         
-        <div style={{}}>Dashboard</div>
+        <div style={{
+            backgroundImage: "linear-gradient(white,yellow)",
+            color: "darkred",
+          }}>Dashboard</div>
         
     )
 }

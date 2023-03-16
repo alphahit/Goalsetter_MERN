@@ -6,3 +6,4 @@ export const store = configureStore({
    auth : authReducer
   },
 });
+//We bring the reducer from the slice and add it to our store
