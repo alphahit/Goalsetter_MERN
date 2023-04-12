@@ -49,7 +49,9 @@ function Login() {
       email,
       password,
     }
+    console.log("Dispatch User ===>",userData)
     dispatch(login(userData))
+    //navigate('/dashboard')
 
   }
  

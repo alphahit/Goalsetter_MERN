@@ -4,7 +4,7 @@ import authService from './authService'
 const user = JSON.parse(localStorage.getItem('user'))
 
 const initialState = {
-    users: user ? user : null,
+    user: user ? user : null,
     isError: false,
     isSuccess: false,
     isLoading: false,
@@ -30,6 +30,7 @@ export const register = createAsyncThunk('auth/register', async(user, thunkAPI) 
 //Async Thunk Function
 export const login = createAsyncThunk('auth/login', async(user, thunkAPI) => {
     try {
+        console.log("Async Thunk Function user ====>",user)
         return await authService.login(user, thunkAPI)
     } catch (error) {
         const message = (error.response && error.response.data && error.response.message) || error.message ||
@@ -42,13 +43,15 @@ export const login = createAsyncThunk('auth/login', async(user, thunkAPI) => {
 
 export const logout = createAsyncThunk('auth/logout',
     async () =>{
-        await authService.logout()
+        authService.logout()
     }
 )
 
 export const authSlice = createSlice({
     name: 'auth',
     initialState,
+    //Anything we put in reducers is not going to be thunk 
+    //functions or async functions
     reducers: {
         reset: (state) => {
             state.isLoading = false
@@ -97,5 +100,7 @@ export const authSlice = createSlice({
     },
 })
 
+//If we have a reducer inside inside the reducers we have to export
+//using authSlice.actions
 export const { reset } = authSlice.actions
 export default authSlice.reducer

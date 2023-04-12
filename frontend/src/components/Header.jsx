@@ -25,6 +25,7 @@ const onLogout = () =>{
         <Link to = '/' >GoalSetter</Link>
     </div>
     <ul>
+        {console.log("User =====>",user)}
         {user? (
             <>
             <li>
