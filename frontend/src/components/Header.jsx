@@ -35,11 +35,7 @@ const onLogout = () =>{
                 
             
         </li>
-        <li>
-            <Link to = '/register' >
-                <FaUser/> Register
-            </Link>
-        </li></>
+       </>
         ):(
 
             <>
